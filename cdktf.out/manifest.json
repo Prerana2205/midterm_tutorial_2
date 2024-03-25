@@ -1,0 +1,14 @@
+{
+  "version": "0.20.5",
+  "stacks": {
+    "tutorial_1": {
+      "name": "tutorial_1",
+      "constructPath": "tutorial_1",
+      "workingDirectory": "stacks/tutorial_1",
+      "synthesizedStackPath": "stacks/tutorial_1/cdk.tf.json",
+      "stackMetadataPath": "stacks/tutorial_1/metadata.json",
+      "annotations": [],
+      "dependencies": []
+    }
+  }
+}
