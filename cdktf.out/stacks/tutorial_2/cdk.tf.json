@@ -1,0 +1,216 @@
+{
+  "//": {
+    "metadata": {
+      "backend": "local",
+      "stackName": "tutorial_1",
+      "version": "0.20.5"
+    },
+    "outputs": {
+      "tutorial_1": {
+        "WebsiteURL": "WebsiteURL"
+      }
+    }
+  },
+  "output": {
+    "WebsiteURL": {
+      "value": "${aws_s3_bucket.MyFirstBucket.website_endpoint}"
+    }
+  },
+  "provider": {
+    "aws": [
+      {
+        "region": "us-west-1"
+      }
+    ]
+  },
+  "resource": {
+    "aws_s3_bucket": {
+      "MyFirstBucket": {
+        "//": {
+          "metadata": {
+            "path": "tutorial_1/MyFirstBucket",
+            "uniqueId": "MyFirstBucket"
+          }
+        },
+        "bucket": "terraform-question-1",
+        "force_destroy": true,
+        "website": {
+          "index_document": "index.html"
+        }
+      }
+    },
+    "aws_s3_bucket_object": {
+      "Cafe-OwnerspngObject": {
+        "//": {
+          "metadata": {
+            "path": "tutorial_1/Cafe-Owners.pngObject",
+            "uniqueId": "Cafe-OwnerspngObject"
+          }
+        },
+        "bucket": "${aws_s3_bucket.MyFirstBucket.bucket}",
+        "content_type": "text/plain",
+        "key": "/images/Cafe-Owners.png",
+        "source": "/home/ec2-user/environment/tutorial_1/static-website/images/Cafe-Owners.png"
+      },
+      "Cake-VitrinepngObject": {
+        "//": {
+          "metadata": {
+            "path": "tutorial_1/Cake-Vitrine.pngObject",
+            "uniqueId": "Cake-VitrinepngObject"
+          }
+        },
+        "bucket": "${aws_s3_bucket.MyFirstBucket.bucket}",
+        "content_type": "text/plain",
+        "key": "/images/Cake-Vitrine.png",
+        "source": "/home/ec2-user/environment/tutorial_1/static-website/images/Cake-Vitrine.png"
+      },
+      "Coffee-ShoppngObject": {
+        "//": {
+          "metadata": {
+            "path": "tutorial_1/Coffee-Shop.pngObject",
+            "uniqueId": "Coffee-ShoppngObject"
+          }
+        },
+        "bucket": "${aws_s3_bucket.MyFirstBucket.bucket}",
+        "content_type": "text/plain",
+        "key": "/images/Coffee-Shop.png",
+        "source": "/home/ec2-user/environment/tutorial_1/static-website/images/Coffee-Shop.png"
+      },
+      "Coffee-and-PastriespngObject": {
+        "//": {
+          "metadata": {
+            "path": "tutorial_1/Coffee-and-Pastries.pngObject",
+            "uniqueId": "Coffee-and-PastriespngObject"
+          }
+        },
+        "bucket": "${aws_s3_bucket.MyFirstBucket.bucket}",
+        "content_type": "text/plain",
+        "key": "/images/Coffee-and-Pastries.png",
+        "source": "/home/ec2-user/environment/tutorial_1/static-website/images/Coffee-and-Pastries.png"
+      },
+      "CookiespngObject": {
+        "//": {
+          "metadata": {
+            "path": "tutorial_1/Cookies.pngObject",
+            "uniqueId": "CookiespngObject"
+          }
+        },
+        "bucket": "${aws_s3_bucket.MyFirstBucket.bucket}",
+        "content_type": "text/plain",
+        "key": "/images/Cookies.png",
+        "source": "/home/ec2-user/environment/tutorial_1/static-website/images/Cookies.png"
+      },
+      "Cup-of-Hot-ChocolatepngObject": {
+        "//": {
+          "metadata": {
+            "path": "tutorial_1/Cup-of-Hot-Chocolate.pngObject",
+            "uniqueId": "Cup-of-Hot-ChocolatepngObject"
+          }
+        },
+        "bucket": "${aws_s3_bucket.MyFirstBucket.bucket}",
+        "content_type": "text/plain",
+        "key": "/images/Cup-of-Hot-Chocolate.png",
+        "source": "/home/ec2-user/environment/tutorial_1/static-website/images/Cup-of-Hot-Chocolate.png"
+      },
+      "Strawberry--Blueberry-TartspngObject": {
+        "//": {
+          "metadata": {
+            "path": "tutorial_1/Strawberry-&-Blueberry-Tarts.pngObject",
+            "uniqueId": "Strawberry--Blueberry-TartspngObject"
+          }
+        },
+        "bucket": "${aws_s3_bucket.MyFirstBucket.bucket}",
+        "content_type": "text/plain",
+        "key": "/images/Strawberry-&-Blueberry-Tarts.png",
+        "source": "/home/ec2-user/environment/tutorial_1/static-website/images/Strawberry-&-Blueberry-Tarts.png"
+      },
+      "Strawberry-TartspngObject": {
+        "//": {
+          "metadata": {
+            "path": "tutorial_1/Strawberry-Tarts.pngObject",
+            "uniqueId": "Strawberry-TartspngObject"
+          }
+        },
+        "bucket": "${aws_s3_bucket.MyFirstBucket.bucket}",
+        "content_type": "text/plain",
+        "key": "/images/Strawberry-Tarts.png",
+        "source": "/home/ec2-user/environment/tutorial_1/static-website/images/Strawberry-Tarts.png"
+      },
+      "indexhtmlObject": {
+        "//": {
+          "metadata": {
+            "path": "tutorial_1/index.htmlObject",
+            "uniqueId": "indexhtmlObject"
+          }
+        },
+        "bucket": "${aws_s3_bucket.MyFirstBucket.bucket}",
+        "content_type": "text/html",
+        "key": "/index.html",
+        "source": "/home/ec2-user/environment/tutorial_1/static-website/index.html"
+      },
+      "stylescssObject": {
+        "//": {
+          "metadata": {
+            "path": "tutorial_1/styles.cssObject",
+            "uniqueId": "stylescssObject"
+          }
+        },
+        "bucket": "${aws_s3_bucket.MyFirstBucket.bucket}",
+        "content_type": "text/css",
+        "key": "/css/styles.css",
+        "source": "/home/ec2-user/environment/tutorial_1/static-website/css/styles.css"
+      }
+    },
+    "aws_s3_bucket_ownership_controls": {
+      "ExampleOwnershipControls": {
+        "//": {
+          "metadata": {
+            "path": "tutorial_1/ExampleOwnershipControls",
+            "uniqueId": "ExampleOwnershipControls"
+          }
+        },
+        "bucket": "${aws_s3_bucket.MyFirstBucket.bucket}",
+        "rule": {
+          "object_ownership": "BucketOwnerEnforced"
+        }
+      }
+    },
+    "aws_s3_bucket_policy": {
+      "StaticWebsiteBucketPolicy": {
+        "//": {
+          "metadata": {
+            "path": "tutorial_1/StaticWebsiteBucketPolicy",
+            "uniqueId": "StaticWebsiteBucketPolicy"
+          }
+        },
+        "bucket": "${aws_s3_bucket.MyFirstBucket.bucket}",
+        "policy": "{\"Version\": \"2012-10-17\", \"Statement\": [{\"Sid\": \"PublicReadGetObject\", \"Effect\": \"Allow\", \"Principal\": \"*\", \"Action\": \"s3:GetObject\", \"Resource\": [\"arn:aws:s3:::terraform-question-1/*\"]}]}"
+      }
+    },
+    "aws_s3_bucket_public_access_block": {
+      "PublicAccess": {
+        "//": {
+          "metadata": {
+            "path": "tutorial_1/PublicAccess",
+            "uniqueId": "PublicAccess"
+          }
+        },
+        "block_public_acls": false,
+        "bucket": "${aws_s3_bucket.MyFirstBucket.bucket}"
+      }
+    }
+  },
+  "terraform": {
+    "backend": {
+      "local": {
+        "path": "/home/ec2-user/environment/tutorial_1/terraform.tutorial_1.tfstate"
+      }
+    },
+    "required_providers": {
+      "aws": {
+        "source": "aws",
+        "version": "5.42.0"
+      }
+    }
+  }
+}
